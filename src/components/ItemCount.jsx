@@ -2,33 +2,37 @@ import { useState } from "react";
 
 const ItemCount = ({ stock = 2, initial = 0, onAdd }) => {
   const [count, setCount] = useState(initial);
-  const updateCount = (operacion) => {
-    if (operacion === "-" && count > 0) {
-      setCount(count - 1);
-    }
-    if (operacion === "+" && count < stock) {
-      setCount(count + 1);
-    }
-  };
+
+  function handleAdd() {
+    if (count < stock) setCount(count + 1);
+  }
+
+  function handleSustract() {
+    if (count !== initial) setCount(count - 1);
+  }
+
   const updateCountInput = (e) => {
     const { value } = e.target;
     if (value <= stock) {
       setCount(isNaN(value) ? 0 : parseInt(value));
     }
   };
+
   return (
     <>
       <div>
         <input
-          onChange={(e) => updateCountInput(e)}
-          placeholder=""
+          onChange={updateCountInput}
+          min="1"
+          max={stock}
+         /*  min={initial} */
           value={count}
           type="number"
         />
-        <button onClick={() => updateCount("-")} type="button">
+        <button onClick={handleSustract} type="button">
           -
         </button>
-        <button onClick={() => updateCount("+")} type="button">
+        <button onClick={handleAdd} type="button">
           +
         </button>
       </div>
