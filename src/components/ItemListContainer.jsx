@@ -9,12 +9,27 @@ import data from "./utils/data";
     };
     return <ItemCount stock={10} initial={1} onAdd={onAddItem}></ItemCount> ;
 } */
- 
+
+
+
 const ItemListContainer = () => {
     const [items, setItems ] = useState ([]);
     useEffect( () => {
-        setItems(data);
-        }, []);
+        let promiseItems = new Promise (( resolve, reject) => {
+            setTimeout(() => {
+                resolve(data);
+            }, 
+            2000);
+        });
+        /*mock */
+        promiseItems.then(
+            (respuesta) => {
+                setItems(data);
+            }
+            ).catch(
+                (errorMsg) => console.error (errorMsg)
+                )
+    }, []);
     return(
         <>
         <div className="mt-5">
