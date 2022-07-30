@@ -5,16 +5,8 @@ import data from "./utils/data";
 import Spinner from "./Spinner";
 import { useParams } from "react-router-dom";
 
-/* const ItemListContainer = ({greeting}) => {
-    const onAddItem = (count) => {
-        alert( `${count} El item fue agregado al carrito`);
-    };
-    return <ItemCount stock={10} initial={1} onAdd={onAddItem}></ItemCount> ;
-} */
 
-
-
-const ItemListContainer = () => {
+/* const ItemListContainer = () => {
     const { name } = useParams();
     const [items, setItems ] = useState ([]);
     const [loading, setLoading] = useState(false);
@@ -24,9 +16,9 @@ const ItemListContainer = () => {
                 resolve(data);
             }, 
             2000);
-        });
+        }); */
         /*mock */
-        promiseItems.then(
+        /* promiseItems.then(
             (respuesta) => {
                 setItems(data);
             }
@@ -45,4 +37,39 @@ const ItemListContainer = () => {
         </>
     );
 };
-export default ItemListContainer;
+export default ItemListContainer; */
+
+const ItemListContainer = () => {
+    const { name } = useParams();
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const promise = new Promise((resolve) => {
+      setTimeout(() => resolve(data), 2000);
+    });
+  
+    useEffect(() => {
+      setLoading(true);
+      promise.then((res) => {
+        const products = res;
+        if (name) {
+          setItems(products.filter((product) => product.category == name));
+        } else {
+          setItems(products);
+        }
+        setLoading(false);
+      });
+    }, [name]);
+  
+    if (loading) return <Spinner />;
+  
+    return (
+      <>
+        <div className="mt-5">
+          <ItemList items={items} />
+        </div>
+      </>
+    );
+  };
+  
+  export default ItemListContainer;
+  

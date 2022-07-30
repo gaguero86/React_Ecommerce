@@ -1,4 +1,4 @@
-const data =
+const dataDetail =
 [
     {
         "id": 1,
@@ -65,4 +65,4 @@ const data =
         "category": "Cantimploras",
     },
 ];
-export default data;
+export default dataDetail;
