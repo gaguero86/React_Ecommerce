@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Button } from "bootstrap";
+
+import {Button} from "bootstrap";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({ stock = 2, initial = 0, onAdd }) => {
+
+const ItemCount = ({ items = { items }, stock = items.stock, initial = 0, onAdd  }) => {
   const [count, setCount] = useState(initial);
 
   function handleAdd() {
@@ -27,29 +29,29 @@ const ItemCount = ({ stock = 2, initial = 0, onAdd }) => {
           onChange={updateCountInput}
           min="1"
           max={stock}
-          /*  min={initial} */
+
           value={count}
           type="number"
         />
-        <button onClick={handleSustract} type="button">
+        <button onClick={handleSustract} type="button"className="btn btn-primary">
           -
         </button>
-        <button onClick={handleAdd} type="button">
+        <button onClick={handleAdd} type="button"className="btn btn-primary">
           +
         </button> 
       </div>
 
-      <div>
-        <Link to={`/cart`} style={{ textDecoration: "none" }}>
-          <Button
+       <div>
+         <Link to={`/cart`} style={{ textDecoration: "none" }}> 
+          <button
             disabled={count === "" || count === 0}
             onClick={onAdd(count)}
             className="cartButton btnContainer btn-dark"
           >
             Agregar al carrito
-          </Button>
-        </Link>
-      </div>
+          </button>
+         </Link> 
+      </div>  
     </>
   );
 };
