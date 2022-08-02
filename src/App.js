@@ -7,6 +7,7 @@ import Item from './components/Item';
 import CartWidget from './components/CartWidget';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Cart from './components/Cart';
+/* import CartContext from './components/contexts/CartContext'; */
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <div className='pageContainer'>
           <div className='contentWrapper'>
             <BrowserRouter>
+            {/* <CartContext> */}
               <NavBar />
               <Routes>
                 <Route index element={<ItemListContainer />} />
@@ -33,6 +35,7 @@ function App() {
                 />
                 <Route path="/cart" element={<Cart />} />
               </Routes>
+             {/* </CartContext> */}
             </BrowserRouter>
           </div>
         </div>
