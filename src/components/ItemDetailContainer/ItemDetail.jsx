@@ -7,11 +7,13 @@ const ItemDetail = ({ item }) => {
   const { title, stock, pictureUrl } = item;
   const [amount, setAmount] = useState(0);
 
- /*  const { addItem} = useContext(CartContext); */
+ const { addItem} = useContext(CartContext);
 
 
   const onAdd = (amount) => {
-    setAmount(amount);
+    /* setAmount(amount); */
+    addItem (item, amount)
+
   };
 
   return (

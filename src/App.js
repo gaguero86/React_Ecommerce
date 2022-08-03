@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+/* import logo from './logo.svg'; */
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Item from './components/Item';
+/* import Item from './components/Item'; */
 import CartWidget from './components/CartWidget';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart';
-/* import CartContext from './components/contexts/CartContext'; */
+import CartContext from './components/contexts/CartContext';
 
 
 
@@ -18,8 +18,9 @@ function App() {
         <div className='pageContainer'>
           <div className='contentWrapper'>
             <BrowserRouter>
-            {/* <CartContext> */}
+            <CartContext>
               <NavBar />
+              <CartWidget/>
               <Routes>
                 <Route index element={<ItemListContainer />} />
                 <Route path="/category/:name" element={<ItemListContainer />} />
@@ -35,7 +36,7 @@ function App() {
                 />
                 <Route path="/cart" element={<Cart />} />
               </Routes>
-             {/* </CartContext> */}
+             </CartContext>
             </BrowserRouter>
           </div>
         </div>

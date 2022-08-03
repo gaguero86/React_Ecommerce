@@ -16,6 +16,7 @@ const CartContext = ({children}) => {
     }
     setCartItems ([...cartItems, {item, quantity}]);
   };
+  console.log(addItem);
 
   const isInCart =(item)=>{
     cartItems.find(Element=>Element.item === item); //aca agarra cada elemento del item y comparalos
