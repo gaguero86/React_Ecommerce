@@ -20,7 +20,7 @@ function App() {
             <BrowserRouter>
             <CartContext>
               <NavBar />
-              <CartWidget/>
+              
               <Routes>
                 <Route index element={<ItemListContainer />} />
                 <Route path="/category/:name" element={<ItemListContainer />} />

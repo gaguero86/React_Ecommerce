@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 
+
 export const GContext = createContext();
 
 const CartContext = ({children}) => {
@@ -34,9 +35,9 @@ const CartContext = ({children}) => {
       (valorAnterior, valorActual) => valorAnterior + valorActual.item.price * valorActual.quantity, 0
     );
   };
-  return 
+  return (  
     <GContext.Provider value={{ cartItems, addItem, removeItem, clear, total}}>{children}</GContext.Provider>
-  ;
+    );
 };
 
 export default CartContext;
