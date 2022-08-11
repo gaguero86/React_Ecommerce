@@ -43,6 +43,7 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
       <div>
         <button
           disabled={count === "" || count === 0}
+          type= "button"
           onClick={() => onAdd(count)}
           className="btn btn-primary"
         >

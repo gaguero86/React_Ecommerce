@@ -10,7 +10,7 @@ const ItemDetail = ({ item }) => {
   const { addItem } = useContext(CartContext);
 
   const onAdd = (amount) => {
-    /* setAmount(amount); */
+    setAmount(amount); 
     addItem(item, amount);
   };
 

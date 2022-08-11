@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext } from "./contexts/CartContext";
+
 
 const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
