@@ -7,7 +7,8 @@ const Item = ({ item }) => {
       <img className="card-img-top" src={pictureUrl} alt="Card image cap" />
       <div className="card-body d-flex flex-column justify-content-center">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">{`${stock} units available!`}</p>
+        <p className="card-text">{`${stock} unidades disponibles!`}</p>
+        <p className="card-text">{`Precio: $${price}`}</p>
         <Link to={`item/${id}`}>
           <button className="btn btn-primary">Mas detalles</button>
         </Link>

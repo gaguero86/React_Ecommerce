@@ -46,7 +46,7 @@ const NavBar = () => {
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
+                    <a className="navbar-text dropdown-item">
                     <Link to={"/category/Vasos"} style={{ textDecoration: 'none' }}>Vasos</Link>
                     </a>
                   </li>

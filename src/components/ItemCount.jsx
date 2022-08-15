@@ -27,6 +27,7 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
           max={stock}
           value={count}
           type="number"
+
         />
         <button
           onClick={handleSustract}
