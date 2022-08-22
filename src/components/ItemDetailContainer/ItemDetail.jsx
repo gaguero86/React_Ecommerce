@@ -19,7 +19,7 @@ const ItemDetail = ({ item }) => {
       <img className="card-img-top" src={pictureUrl} alt="Card cap" />
       <div className="card-body d-flex flex-column justify-content-center">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text">{`${stock} units available!`}</p>
+        <p className="card-text">{`${stock} Unidades Disponibles!`}</p>
         <p className="card-text">{`Precio: $${price}`}</p>
         <h6 className="card-text">{`${description}`}</h6>
         <h7>¡Quedan {item.stock} unidades!</h7>

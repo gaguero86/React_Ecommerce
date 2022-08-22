@@ -3,7 +3,6 @@ import "bootstrap";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
-
 const NavBar = () => {
   return (
     <>
@@ -30,7 +29,7 @@ const NavBar = () => {
                   Inicio
                 </Link>
               </li>
-{/*               <li className="nav-item navbar-brand">
+              {/*               <li className="nav-item navbar-brand">
                 <Link to={"/category/remera"}>Productos</Link>
               </li> */}
               <li className="nav-item dropdown">
@@ -47,45 +46,85 @@ const NavBar = () => {
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
                     <a className="navbar-text dropdown-item">
-                    <Link to={"/category/Vasos"} style={{ textDecoration: 'none' }}>Vasos</Link>
+                      <Link
+                        to={"/category/Vasos"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Vasos
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
-                    <Link to={"/category/Gorras"} style={{ textDecoration: 'none' }}>Gorras</Link>
+                    <a className="navbar-text dropdown-item">
+                      <Link
+                        to={"/category/Gorras"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Gorras
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
-                    <Link to={"/category/Mates"} style={{ textDecoration: 'none' }}>Mates</Link>
+                    <a className="navbar-text dropdown-item">
+                      <Link
+                        to={"/category/Mates"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Mates
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
-                    <Link to={"/category/Tazas"} style={{ textDecoration: 'none' }}>Tazas</Link>
+                    <a className="navbar-text dropdown-item">
+                      <Link
+                        to={"/category/Tazas"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Tazas
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
-                    <Link to={"/category/Botellas de aluminio"} style={{ textDecoration: 'none' }}>Botellas</Link>
+                    <a className="navbar-text dropdown-item">
+                      <Link
+                        to={"/category/Botellas de aluminio"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Botellas
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
-                    <Link to={"/category/Remeras"} style={{ textDecoration: 'none' }}>Remeras</Link>
+                    <a className="navbar-text dropdown-item">
+                      <Link
+                        to={"/category/Remeras"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Remeras
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item " href="#" >
-                    <Link  to={"/category/Matermos"} style={{ textDecoration: 'none' }}>Matermos</Link>
+                    <a className="navbar-text dropdown-item " >
+                      <Link
+                        to={"/category/Matermos"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Matermos
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a className="navbar-text dropdown-item" href="#">
-                    <Link to={"/category/Cantimploras"} style={{ textDecoration: 'none' }}>Cantimploras</Link>
+                    <a className="navbar-text dropdown-item" >
+                      <Link
+                        to={"/category/Cantimploras"}
+                        style={{ textDecoration: "none" }}
+                      >
+                        Cantimploras
+                      </Link>
                     </a>
                   </li>
-{/*                   <li>
+                  {/*                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
@@ -95,7 +134,7 @@ const NavBar = () => {
                   </li> */}
                 </ul>
               </li>
-{/*               <li className="nav-item">
+              {/*               <li className="nav-item">
                 <a className="nav-link disabled">Disabled</a>
               </li> */}
               <li className="nav-item">
@@ -116,7 +155,9 @@ const NavBar = () => {
               </button>
             </form>
           </div>
-          <CartWidget />
+          <Link className="nav-link" to={"/cart/"}>
+            <CartWidget />
+          </Link>
         </div>
       </nav>
     </>
