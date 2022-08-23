@@ -29,9 +29,6 @@ const NavBar = () => {
                   Inicio
                 </Link>
               </li>
-              {/*               <li className="nav-item navbar-brand">
-                <Link to={"/category/remera"}>Productos</Link>
-              </li> */}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -124,23 +121,7 @@ const NavBar = () => {
                       </Link>
                     </a>
                   </li>
-                  {/*                   <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li> */}
                 </ul>
-              </li>
-              {/*               <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
-              </li> */}
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contactos
-                </a>
               </li>
             </ul>
             <form className="d-flex">

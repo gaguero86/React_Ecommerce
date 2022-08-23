@@ -22,7 +22,11 @@ const ItemListContainer = () => {
       const itemsCollection = collection(db, "items");
       getDocs(itemsCollection).then((snapshot) =>{
         const data= snapshot.docs.map((doc)=>({id:doc.id, ...doc.data()}));
-        setItems(data);
+        if (name) {
+          setItems(data.filter((product) => product.category == name));
+        } else {
+          setItems(data);
+        }
         setLoading(false);
       });
 /*       promise.then((res) => {

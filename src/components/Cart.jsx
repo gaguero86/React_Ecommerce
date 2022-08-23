@@ -18,7 +18,7 @@ const Cart = () => {
     const inputs = document.getElementsByTagName("input");
     console.log(inputs[0]);
     const data = Array.from(inputs).map((input, index) => input.value);
-    sendOrder(totalPrice, { name: data[0], mail: data[1], phone: data[2] });
+    sendOrder(totalPrice, { name: data[0], mail: data[1], phone: data[2], Comment: data[3] });
     updateOrder();
     multipleUpdates();
     //
@@ -62,7 +62,7 @@ const Cart = () => {
                       <div className="card-body d-flex flex-column justify-content-center">
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{`${item.stock} unidades disponibles!`}</p>
-                        <p className="card-text">{`Cantidad: ${item.quantity}`}</p>
+                        <p className="card-text">{`Cantidad: ${quantity}`}</p>
                         
                       </div>
                       {/* AGREGADO */}
@@ -72,14 +72,6 @@ const Cart = () => {
                           className="btn btn-info "
                         >
                           Eliminar Articulo
-                        </button>
-                      </div>
-                      <div className="card-body d-flex flex-column justify-content-space-around ">
-                        <button
-                          onClick={() => removeUnity(item)}
-                          className="btn btn-info"
-                        >
-                          Eliminar Unidad
                         </button>
                       </div>
                     </div>
@@ -138,6 +130,22 @@ const Cart = () => {
                         className="form-control"
                         placeholder="Código sin 0 y sin 15"
                         aria-label="Código sin 0 y sin 15"
+                        aria-describedby="basic-addon1"
+                        disabled={totalPrice === "" || totalPrice === 0}
+                      />
+                      
+                    </div>
+                    <div className="input-group mb-4">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="basic-addon1">
+                         Comentarios:
+                        </span>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Ingrese comentarios"
+                        aria-label="Ingrese comentarios"
                         aria-describedby="basic-addon1"
                         disabled={totalPrice === "" || totalPrice === 0}
                       />

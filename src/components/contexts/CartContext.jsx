@@ -27,9 +27,10 @@ const CartProvider = ({ children }) => {
 /////
 
   const addItem = (item, quantity) => {
-    const newItem = isInCart(item);
-    if (newItem) {
-      quantity = quantity + newItem.quantity;
+    const cartItem = isInCart(item);
+    console.log ("Primer prueba",item, "cantidad",quantity, "New Item",cartItem);
+    if (cartItem) {
+      quantity = quantity + cartItem.quantity;
       setCartItems(
         cartItems.splice(
           cartItems.findIndex((Element) => Element.item.id === item.id),
@@ -38,11 +39,11 @@ const CartProvider = ({ children }) => {
       );
     }
     setCartItems([...cartItems, { item, quantity }]);
+    console.log (cartItems);
   };
-  console.log(addItem);
 
   const isInCart = (item) => {
-    cartItems.find((Element) => Element.item === item); //aca agarra cada elemento del item y comparalos
+    return cartItems.find((Element) => Element.item.id === item.id); //aca agarra cada elemento del item y comparalos
   };
   const clear = () => {
     setCartItems([]);
