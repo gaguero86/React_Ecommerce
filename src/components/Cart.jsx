@@ -10,7 +10,6 @@ const Cart = () => {
     clear,
     updateOrder,
     removeItem,
-    removeUnity,
     multipleUpdates,
   } = useContext(CartContext);
   const handleSubmit = (e) => {
@@ -63,7 +62,7 @@ const Cart = () => {
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{`${item.stock} unidades disponibles!`}</p>
                         <p className="card-text">{`Cantidad: ${quantity}`}</p>
-                        
+                        <h6>Subtotal: ${item.price * quantity}</h6>
                       </div>
                       {/* AGREGADO */}
                       <div className="card-body d-flex flex-column justify-content-space-around ">
@@ -182,34 +181,3 @@ const Cart = () => {
 
 export default Cart;
 
-/* import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "./contexts/CartContext";
-
-
-const Cart = () => {
-  const [totalPrice, setTotalPrice] = useState(0);
-  const { cartItems } = useContext(CartContext);
-  useEffect(() => {
-    let total = 0;
-    cartItems.forEach((item) => {
-      total += parseInt(item.price);
-    });
-    setTotalPrice(total);
-  }, [cartItems]);
-  return (
-    <>
-      <ul>
-        {cartItems.map((item) => (
-          <>
-            <li>{item.title}</li>
-            <li>{item.price}</li>
-          </>
-        ))}
-      </ul>
-      <h1 className="bg-primary">{`El Total es: $${totalPrice}`}</h1>
-    </>
-  );
-};
-
-export default Cart;
- */

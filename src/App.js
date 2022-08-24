@@ -8,7 +8,7 @@ import CartWidget from './components/CartWidget';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart';
 import CartContext from './components/contexts/CartContext';
-import ItemCategoryContainer from './components/ItemDetailContainer/ItemCategoryContainer';
+
 
 
 

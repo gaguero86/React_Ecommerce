@@ -3,9 +3,6 @@ import {
   addDoc,
   collection,
   getFirestore,
-  updateDoc,
-  doc,
-  writeBatch,
 } from "firebase/firestore";
 export const CartContext = createContext();
 
@@ -28,7 +25,6 @@ const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     const cartItem = isInCart(item);
-    console.log ("Primer prueba",item, "cantidad",quantity, "New Item",cartItem);
     if (cartItem) {
       quantity = quantity + cartItem.quantity;
       setCartItems(
@@ -39,7 +35,7 @@ const CartProvider = ({ children }) => {
       );
     }
     setCartItems([...cartItems, { item, quantity }]);
-    console.log (cartItems);
+
   };
 
   const isInCart = (item) => {

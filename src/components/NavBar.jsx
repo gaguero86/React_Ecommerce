@@ -124,7 +124,7 @@ const NavBar = () => {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex">
+{/*             <form className="d-flex">
               <input
                 className="form-control me-2"
                 type="search"
@@ -134,7 +134,7 @@ const NavBar = () => {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
           </div>
           <Link className="nav-link" to={"/cart/"}>
             <CartWidget />
